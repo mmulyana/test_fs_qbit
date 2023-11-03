@@ -1,4 +1,4 @@
-import { IFruit } from '.'
+import { IComment, IFruit } from './data'
 
 // solution 1
 export function getFruitsName(arr: IFruit[]): string[] {
@@ -83,4 +83,26 @@ export function getAllStock(arr: IFruit[]): IFruitStock[] {
   })
 
   return payload
+}
+
+// case 2
+function countComment(list: IComment) {
+  if (!list) {
+    return 0
+  }
+
+  let count = 1
+  if (!list.replies) return count
+
+  for (const item of list.replies) {
+    count += countComment(item)
+  }
+
+  return count
+}
+
+export function countAllComments(lists: IComment[]) {
+  let total = 0
+  lists.forEach((list) => (total += countComment(list)))
+  return total
 }
