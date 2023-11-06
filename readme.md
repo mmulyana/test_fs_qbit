@@ -8,7 +8,7 @@
 
 ![](https://raw.githubusercontent.com/mmulyana/mmulyana/main/assets/balibnb.png)
 
-## Stack (Frontend) 🛠
+## Stack Balibnb 🛠
 
 - ⚡️ React.js
 - 💅 Tailwind CSS
