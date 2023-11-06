@@ -53,13 +53,16 @@ export default function Home() {
           </button>
         </div>
         <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10'>
-          {properties.length > 0 ? (
-            properties.map((property) => (
-              <CardProperty data={property} key={property.id} />
-            ))
-          ) : (
-            <p>loading</p>
-          )}
+          {properties.length > 1
+            ? properties.map((property) => (
+                <CardProperty data={property} key={property.id} />
+              ))
+            : [1, 2, 3].map((__, index) => (
+                <div
+                  className='h-56 w-full bg-gray-500 animate-pulse'
+                  key={index}
+                />
+              ))}
         </div>
       </div>
       <div className='mt-8'>
@@ -70,6 +73,7 @@ export default function Home() {
               <CardTestimonial
                 name={testominal.name}
                 message={testominal.message}
+                key={index}
               />
             ))}
           </div>
